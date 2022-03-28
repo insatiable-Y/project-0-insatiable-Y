@@ -43,6 +43,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 0;;
     padding: 5px;
     width: 53px;
     border-radius: 8px;
@@ -89,7 +90,8 @@ a:hover{
     display: block;
     float: right;
     position: absolute;    
-    right: 0;
+    right: -30px;
+    margin-top: 8px;
     border-radius: 10px;
     box-shadow: rgb(247, 244, 244) 1px 1px 5px 5px;
 }
@@ -106,11 +108,16 @@ a:hover{
     cursor: pointer;
 }
 
+#rightBox>a{
+        cursor: pointer;
+}
+
 #rightBox .nav a{
     display: block;
     width: 90px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 #rightBox .nav button{
@@ -120,12 +127,14 @@ a:hover{
     display: block;
     width: 90px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 7px;
+    margin-bottom: 5px;
 }
 
 #main{
-    position: relative;
-    margin: 16px auto;
+    position: absolute;
+    left: 443px;
+    top: 45px;
     overflow: hidden;
     width: 640px;
     height: auto;
@@ -163,7 +172,7 @@ a:hover{
     color: white;
     font-size: 16px;
     width: 90px;
-    height: 40px;
+    height: 41px;
     border-top-right-radius: 11px;
     border-bottom-right-radius: 11px;
     cursor: pointer;
@@ -201,7 +210,7 @@ a:hover{
         text-decoration: underline;
 }
 
-#main .rightBox a:hover{
+#main .rightBox>a:hover{
     text-decoration: underline;
 }
 
@@ -217,7 +226,7 @@ a:hover{
 
 #main .leftBox{
     float: left;
-    width: 280px;
+    width: 300px;
     text-align: left;
     margin-top: 3px;
 }
@@ -230,6 +239,7 @@ a:hover{
 
 #main .leftBox span{
     margin-right: 5px;
+    font-size: 15px;;
 }
 
 #main .leftBox .one{
@@ -247,7 +257,7 @@ a:hover{
 #main .rightBox{
     position: absolute;
     right: 0;
-    width: 280px;
+    width: 300px;
     text-align: left;
     margin-top: 3px;
 }
@@ -260,6 +270,7 @@ a:hover{
 #main .rightBox span{
     margin-right: 5px;
     color: #9195a3;
+    font-size: 15px;
 }
 
 #bottom{
@@ -273,7 +284,7 @@ a:hover{
     text-align: center;
 }
 
-#bottom a{
+#bottom a,span{
     margin: 9px;
     color: #bbb;
     font-size: 12px;
@@ -292,41 +303,60 @@ a:hover{
 #search-img{
     display: none;
     text-align: center;
-    position:relative;
-    margin: 0 auto;
-    margin-top: -180px;
+    position: absolute;
+    left: 449px;
+    top: 240px;
     padding: 24px;
     width: 580px;
     height: 106px;
     box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
     border-radius: 10px;
     background-color: white;
+    overflow: hidden;
 }
 
-#search-img #upload-btn{
-    display: inline;
-    width: 100%;
-    height: 70%;
+#search-img #upload-area{
+    position: relative;
+    top: 25px;
+    padding-left: 230px;
+    padding-right: 230px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: white;
     border: 2px dotted #c4c7ce;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #bbb;
+    text-align: center;
+    cursor: default;
+    font-size: 13px;
 }
 
 #search-img #upload{
-    position: relative;
-    margin: 15px;
+    position: absolute;
+    top: 105px;
+    left: 270px;
+    width: 72px;
+    height: 36.8px;
     align-items: center;
     cursor: pointer;
     border-style: none;
-    background-color: #4e6ef2;
-    color: white;
-    border-radius: 10px;
+    opacity: 0;
+    z-index: 1;
 }
 
-#search-img .upload button{
-    border: none;
-    background-color: white;
+#search-img .select-img{
+    position: absolute;
+    top: 105px;
+    left: 270px;
+    display: inline-block;
+    background-color: #4e6ef2;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
 }
 
 #search-box{
@@ -336,7 +366,8 @@ a:hover{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #c4c7ce;
+    z-index: 999;
+    background-color: rgb(0 0 0 / 20%);
     overflow: hidden;
 }
 
@@ -347,6 +378,19 @@ a:hover{
     margin-top: calc((100vh - 250px)/2);
     background-color: white;
     border-radius: 15px;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+#search-box .head{
+    position: absolute;
+    margin: 20px 0 0 40px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#search-box .head:hover{
+    color: black;
 }
 
 #search-box #close{
@@ -361,4 +405,85 @@ a:hover{
     border: none;
     cursor: pointer;
     font-weight: bold;
+}
+
+#search-box .advance-form{
+    position: relative;
+    top: 35px;
+    display: block;
+    list-style: none;
+}
+
+#search-box .advance-form li{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+#search-box .advance-form .keyword{
+    line-height: 30px;
+    text-align: left;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#search-box .keyword a{
+    padding: 10px;
+    border: 1px solid #c4c7ce;
+    border-radius: 8px;
+}
+
+#search-box .keyword .left-key1{
+    position: relative;
+    margin: 0 20px 10px 10px;
+}
+
+#search-box .keyword .left-key2{
+    display: inline-block;
+    position: relative;
+    margin: 5px 17px 0 77px;
+    padding: 3px 15px 0 10px;
+}
+
+#search-box .keyword .right-key1,right-key2{
+    position: relative;
+    margin: 10px 20px 0 10px;
+}
+
+#search-box .keyword .right-key2{
+    margin-left: 9.5px;
+    padding-right: 22px;
+}
+
+#search-box .keyword input{
+    border: none;
+    width: 140px;
+}
+
+#search-box .keyword a:hover{
+    color: black;
+}
+
+#search-box .color-grey{
+    color: #626675;
+}
+
+#search-box .stand-right{
+    position: absolute;
+    left: 407px;
+}
+
+#search-box select,#xianding{
+    border: 1px solid #c4c7ce;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#search-box .advance-submitBtn{
+    position: relative;
+    margin: 20px 411px;
+    color: white;
+    background-color: #4e6ef2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
