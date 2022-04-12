@@ -1,3 +1,5 @@
+<!--点击百度搜索页面右上角“设置”下的“高级搜索”打开高级搜索页面，点击左上角“图片”打开图面搜索页面-->
+
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -14,7 +16,7 @@
                 <a href="http://map.baidu.com/" target="_blank">地图</a>
                 <a href="http://tieba.baidu.com/" target="_blank">贴吧</a>
                 <a href="https://haokan.baidu.com/?sfrom=baidu-top" target="_blank">视频</a>
-                <a href="http://image.baidu.com/" target="_blank">图片</a>
+                <a href="./image-search.html" target="_blank">图片</a>
                 <a href="https://pan.baidu.com/?from=1026962h" target="_blank">网盘</a>
                 <div id="leftBox" style="display: inline;">
                     <a href="http://www.baidu.com/more/" target="_blank">更多</a>
@@ -57,7 +59,7 @@
                     <div class="nav">
                         <div>
                             <button>搜索设置</button>
-                            <button id="click-advance">高级搜索</button>
+                            <a href="./advance-search.html" id="click-advance">高级搜索</a>
                         </div>
                         
                         <a>关闭预测</a>
@@ -69,79 +71,15 @@
             </div>
         </div>
 
-        <div id="search-box">
-            <div class="advance-search">
-                <a class="head">高级搜索</a>
-                <button id="close" title="关闭">X</button>
-            
-                <form class="advance-form" action="https://www.baidu.com/s" target="_blank" name="f1" onsubmit="return validKey()" method="post">
-                    <li class="keyword">搜索结果：
-                        <a class="left-key1">
-                            包含全部关键词 |
-                            <input name="q1" autocomplete="off">
-                        </a>
-                        <a class="right-key1">
-                            包含任意关键词 |
-                            <input name="q2" autocomplete="off">
-                        </a>
-                        <a class="left-key2">
-                            包含完整关键词 |
-                            <input name="q3" autocomplete="off">
-                        </a>
-                        <a class="right-key2">
-                            不包含关键词 |
-                            <input name="q4" autocomplete="off">
-                        </a>
-                    </li>
-                    <li>
-                        时间：<a class="color-grey">限定要搜索的网页的时间是</a>
-                        <select class="stand-right">
-                            <option value="全部时间">全部时间</option>
-                            <option value="最近一天">最近一天</option>
-                            <option value="最近一周">最近一周</option>
-                            <option value="最近一月">最近一月</option>
-                            <option value="最近一年">最近一年</option>
-                        </select>
-                    </li>
-                    <li>
-                        文档格式：<a class="color-grey">搜索网页格式是</a>
-                        <select class="stand-right">
-                            <option value="所有网页和文件">所有网页和文件</option>
-                            <option value="Adobe Acrobat PDF (.pdf)">Adobe Acrobat PDF (.pdf)</option>
-                            <option value="微软 Word (.doc)">微软 Word (.doc)</option>
-                            <option value="微软 Excel (.xls)">微软 Excel (.xls)</option>
-                            <option value="微软 Powerpoint (.ppt)">微软 Powerpoint (.ppt)</option>
-                            <option value="RTF 文件 (.rtf)">RTF 文件 (.rtf)</option>
-                            <option value="所有格式">所有格式</option>
-                        </select>
-                    </li>    
-                    <li>
-                        关键词位置：<a class="color-grey">查询关键词位于</a>
-                        <div class="stand-right" style="display: inline;">
-                            <input name="position" name="q5" type="radio" checked="checked" value="网页任何地方">网页任何地方
-                            <input name="position" name="q5" type="radio" value="仅网页标题中">仅网页标题中
-                            <input name="position" name="q5" type="radio" value="仅URL中">仅URL中
-                    
-                        </div>
-                    </li>    
-                    <li>
-                        站内搜索：<a class="color-grey">限定要搜索指定的网站是</a>
-                        <input name="q6" class="stand-right" id="xianding">
-                    </li>
-
-                <input type="submit" value="高级搜索" class="advance-submitBtn">
-                </form>
-                                
-            </div>
-        </div>
-
+        
+        
         <div id="main">
             <a class="logo" href="https://www.baidu.com/s?wd=%E7%99%BE%E5%BA%A6%E7%83%AD%E6%90%9C&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pcs" target="_blank">
                 <img src="../img/logo.png" alt="百度一下，你就知道" title="点击一下，了解更多" height="125px" style="margin-bottom: 10px;">
             </a>
             <div class="searchBox">
-                <form action="https://www.baidu.com/s">
-                    <input type="text" name="wd" id="wd">
+                <form action="https://www.baidu.com/s" >
+                    <input type="text" name="wd" autocomplete="off" id="wd">
                     <input type="submit" value="百度一下" id="btn">
                 </form>
                 <i id="ico" title="按图片搜索"></i>
@@ -171,9 +109,8 @@
             
         </div>
 
-        <form action="https://graph.baidu.com/s" id="search-img" name="f">
+        <form action="https://graph.baidu.com/s" id="search-img" name="f" method="post">
             <a id="upload-area">拖拽图片到这里</a>
-            <input type="hidden" value="选择文件" />
             <input type="file" accept="image/*" id="upload" value="上传图片" onchange="autoSbumit()" />
             <a class="select-img">选择文件</a>
         </form>
@@ -198,26 +135,6 @@
 
         function toMore(){
             window.open('http://www.baidu.com/more/')
-        }
-
-        document.getElementById('click-advance').onclick=function(e){
-            document.getElementById('search-box').style.display='block';
-            stopPropagation(e);
-        }
-
-        document.onclick=function(ev){
-            var domm = ev.target||ev.srcElement;
-            if(domm.id !="search-box"&&document.getElementById('search-box').style.display=='block'){
-                document.getElementById('search-box').style.display='none';
-            }
-        }
-
-        document.getElementById('search-box').onclick=function(e){
-            stopPropagation(e);
-        }
-
-        document.getElementById('close').onclick=function(){
-            document.getElementById('search-box').style.display='none';
         }
 
         document.getElementById('ico').onclick=function(e){
@@ -271,16 +188,6 @@
             fr.onload=function(e){
                 fr.readAsDataURL(f);
                 e.target.appendChild(document.getElementById('upload-area'));
-            }
-        }
-
-        function validKey(){
-            var key1 = document.forms["f1"]["q1"].value;
-            var key2 = document.forms["f1"]["q2"].value;
-            var key3 = document.forms["f1"]["q3"].value;
-            if(!(key1||key2||key3)){
-                alert("*请至少填写1个有效关键词");
-                return false;
             }
         }
         

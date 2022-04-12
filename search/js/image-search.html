@@ -1,0 +1,117 @@
+<!--点击百度搜索页面左上角“图片”打开此页面，点击右上角“百度搜索”返回百度搜索-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <link rel="shortcut icon" href="../img/index.ico" >
+        <title>百度图片，发现多彩世界</title>
+        <link rel="stylesheet" href="../CSS/home.css">
+    </head>
+
+    <style>
+
+        .top{
+            background-color: #999388;
+            height: 50px;
+            margin: -10px;
+        }
+
+        .top a{
+            color: white;
+            font-size: 13px;
+            position: relative;
+            float: right;
+            margin: 17px 100px;
+        }
+
+        #main{
+            position: relative;
+            margin-top: 150px;
+            height: 50px auto;
+        }
+
+        #main .searchBox #btn{
+            background-color: #e4e4e5;
+            color: black;
+        }
+
+        #main .below{
+            margin: 15px;
+        }
+
+        #main .below a{
+            text-align: center;
+            margin: 10px;
+            font-size: 14px;
+            color: white;
+        }
+ 
+        #img-bottom{
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        #img-bottom a{
+            color: aliceblue;
+            font-size: 13px;
+        }
+
+        #img-background{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0.75;
+            z-index: -1;
+        }
+
+        #img-background img{
+            width: 100%;
+        }
+
+    </style>
+
+    <body>
+        <div id="img-background">
+            <img src="https://tse1-mm.cn.bing.net/th/id/R-C.ec65b34d76ad390ecaa484b4017760f1?rik=NHNPAYeyehGbEw&riu=http%3a%2f%2fday.mirrorcn.com%2fupload%2fimages%2f2014%2f6%2f11%2f1194757764.jpg&ehk=r4AgoeYz2%2bhcV0KjT2XC4heRR7DjMIbfD1YL6E%2ftoGc%3d&risl=&pid=ImgRaw&r=0">
+        </div>
+        <div class="top">
+            <a href="./index.html">百度首页</a>
+
+        </div>
+
+        <div id="main">
+            <div class="searchBox">
+                <form action="https://image.baidu.com/search/index" name="f1" method="get">
+                    <input type="hidden" name="tn" value="baiduimage">
+                    <input type="text" name="word" autocomplete="off" id="wd">
+                    <input type="submit" value="百度一下" id="btn">
+                    
+                </form>
+                <i id="ico" title="按图片搜索"></i>
+            </div>
+            
+            <div class="below">
+                <a>热门搜索：</a>
+                <a href="https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fr=&sf=1&fmq=1526269427171_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E5%A3%81%E7%BA%B8">壁纸</a>
+                <a href="http://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fr=&sf=1&fmq=1461834053046_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&itg=0&ie=utf-8&word=%E5%A4%B4%E5%83%8F#z=0&pn=&ic=0&st=-1&face=0&s=0&lm=-1">头像</a>
+                <a href="https://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=%E6%89%8B%E6%8A%84%E6%8A%A5">手抄报</a>
+                <a href="https://image.baidu.com/search/albumslist?tn=albumslist&word=%E8%9B%8B%E7%B3%95&album_tab=%E4%BA%BA%E7%89%A9&rn=15&fr=albumsdetail_nav">高清美图</a>
+        
+            </div>
+
+            
+            
+        </div>
+
+        <div id="img-bottom">
+            <a>背景图片来源：徐悲鸿</a>
+        </div>
+
+
+    </body>
+
+
+</html>

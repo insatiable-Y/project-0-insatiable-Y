@@ -1,0 +1,113 @@
+<!--点击百度搜索页面右上角“设置”下的“高级搜索”打开此页面，点击X返回百度搜索-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <link rel="shortcut icon" href="../img/index.ico" >
+        <title>百度一下，你就知道</title>
+        <link rel="stylesheet" href="../CSS/home.css">
+        <iframe src="./index.html" id="background" frameborder="0" width="100%" height="100%"></iframe>
+    </head>
+
+    <body>
+        <div id="search-box">
+            <div class="advance-search">
+                <a class="head">高级搜索</a>
+                <a href="./index.html" id="close" title="关闭">X</a>
+            
+                <form action="https://www.baidu.com/s"target="_blank" name="f1" class="advance-form"  onsubmit="return validKey()" method="get">
+                    <li class="keyword">搜索结果：
+                        <a class="left-key1">
+                            包含全部关键词 |
+                            <input name="q1" autocomplete="off">
+                        </a>
+                        <a class="right-key1">
+                            包含任意关键词 |
+                            <input name="q2" autocomplete="off">
+                        </a>
+                        <a class="left-key2">
+                            包含完整关键词 |
+                            <input name="q3" autocomplete="off">
+                        </a>
+                        <a class="right-key2">
+                            不包含关键词 |
+                            <input name="q4" autocomplete="off">
+                        </a>
+                    </li>
+                    <li>
+                        时间：<a class="color-grey">限定要搜索的网页的时间是</a>
+                        <select class="stand-right">
+                            <option value="全部时间">全部时间</option>
+                            <option value="最近一天">最近一天</option>
+                            <option value="最近一周">最近一周</option>
+                            <option value="最近一月">最近一月</option>
+                            <option value="最近一年">最近一年</option>
+                        </select>
+                    </li>
+                    <li>
+                        文档格式：<a class="color-grey">搜索网页格式是</a>
+                        <select class="stand-right">
+                            <option value="所有网页和文件">所有网页和文件</option>
+                            <option value="Adobe Acrobat PDF (.pdf)">Adobe Acrobat PDF (.pdf)</option>
+                            <option value="微软 Word (.doc)">微软 Word (.doc)</option>
+                            <option value="微软 Excel (.xls)">微软 Excel (.xls)</option>
+                            <option value="微软 Powerpoint (.ppt)">微软 Powerpoint (.ppt)</option>
+                            <option value="RTF 文件 (.rtf)">RTF 文件 (.rtf)</option>
+                            <option value="所有格式">所有格式</option>
+                        </select>
+                    </li>    
+                    <li>
+                        关键词位置：<a class="color-grey">查询关键词位于</a>
+                        <div class="stand-right" style="display: inline;">
+                            <input name="position" name="q5" type="radio" checked="checked" value="网页任何地方">网页任何地方
+                            <input name="position" name="q5" type="radio" value="仅网页标题中">仅网页标题中
+                            <input name="position" name="q5" type="radio" value="仅URL中">仅URL中
+                    
+                        </div>
+                    </li>    
+                    <li>
+                        站内搜索：<a class="color-grey">限定要搜索指定的网站是</a>
+                        <input type="text" name="q6" class="stand-right" id="xianding">
+                    </li>
+
+                    <input type="submit" value="高级搜索" class="advance-submitBtn">
+                </form>
+                                
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        document.onclick=function(ev){
+            var domm = ev.target||ev.srcElement;
+            if(domm.id !="search-box"&&document.getElementById('search-box').style.display=='block'){
+                window.location.href="index.html";
+            }
+        }
+
+        function stopPropagation(e) {
+            if (e.stopPropagation)
+                e.stopPropagation();
+            else
+                e.cancelBubble = true;
+        }
+
+        document.getElementById('search-box').onclick=function(e){
+            stopPropagation(e);
+        }
+
+        function validKey(){
+            var key1 = document.forms["f1"]["q1"].value;
+            var key2 = document.forms["f1"]["q2"].value;
+            var key3 = document.forms["f1"]["q3"].value;
+            if(!(key1||key2||key3)){
+                alert("*请至少填写1个有效关键词");
+                return false;
+            }
+        }
+
+    </script>
+
+</html>
